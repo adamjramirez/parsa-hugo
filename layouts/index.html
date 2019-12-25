@@ -131,11 +131,14 @@
           <h1 class="mb-0">{{.Site.Params.main.title}}</h1>
           <h2 class="mb-100 title-border-lg"><i>{{.Site.Params.main.subtitle}}</i></h2>
           <p class="mb-80 mr-5">{{.Site.Params.main.shortdescription | markdownify }}</p>
+          {{ if .Site.Params.socialbuttons.enable }}
           <span class="font-secondary text-dark mr-3 mr-sm-5">Follow</span>
+          
           <ul class="list-inline d-inline-block mb-5">
             {{ range .Site.Params.social }}
             <li class="list-inline-item mx-3"><a href="{{.URL}}" class="text-dark"><i class="{{.icon}}"></i></a></li>
             {{ end }}
+          {{ end }}
           </ul>
         </div>
         <div class="col-lg-6 text-right">
